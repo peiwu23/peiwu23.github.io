@@ -2,15 +2,36 @@
   <head>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script> 
     <script src="https://unpkg.com/p5.collide2d"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <style>
       body {
         position:fixed;
         background-color:black;
       }
+      #instructions {
+        position:absolute;
+        width:50%;
+        height:50%;
+        top:10%;
+        left:25%;
+        background-color:rgb(11, 32, 66);
+        text-align:center;
+        color:white;
+        font-size:40px;
+       }
      </style>
   </head>
   <body>
+    <div id = 'instructions'>
+      The goal of this game is to get to the other side of the screen without touching any of the moving circles. Control using the 'aswd' keys.
+      <br>
+      <button onclick = "instruction()">Start</button>
+    </div>
     <script>
+      function instruction() {
+        document.getElementById('instructions').style.visibility = 'hidden'
+      }
+      
       var w = window.innerWidth 
       var h = window.innerHeight 
       var player 
@@ -45,9 +66,10 @@
       } 
       function draw() { 
         clear() 
-        console.log(player.x)
-        player.show() 
-        player.update() 
+        if (hit12 == false){  
+          player.show() 
+          player.update()
+        }
         badguy.show() 
         badguy.update() 
         badguy2.show() 
@@ -88,8 +110,8 @@
           player.y = 25 
         } 
         if (hit12 == true) {
-          window.alert('game ends')
-          getElementsByTagName('body').style.visibility = 'hidden'
+          document.getElementById('instructions').innerHTML = 'Game Ended'
+          document.getElementById('instructions').style.visibility = 'visible'
         }
       }
       function player() { 

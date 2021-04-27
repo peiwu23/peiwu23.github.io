@@ -10,361 +10,363 @@
      </style>
   </head>
   <body>
-    var w = window.innerWidth 
-    var h = window.innerHeight 
-    var player 
-    var hit = false 
-    var hit2 = false 
-    var hit3 = false
-    var hit4 = false
-    var hit5 = false
-    var hit6 = false
-    var hit7 = false
-    var hit8 = false
-    var hit9 = false
-    var hit10 = false
-    var hit11 = false
-    var hit12 = false
+    <script>
+      var w = window.innerWidth 
+      var h = window.innerHeight 
+      var player 
+      var hit = false 
+      var hit2 = false 
+      var hit3 = false
+      var hit4 = false
+      var hit5 = false
+      var hit6 = false
+      var hit7 = false
+      var hit8 = false
+      var hit9 = false
+      var hit10 = false
+      var hit11 = false
+      var hit12 = false
 
-    function setup() { 
-      createCanvas(w,h) 
-      player = new player() 
-      badguy = new badguy() 
-      badguy2 = new badguy2() 
-      badguy4 = new badguy4()
-      badguy5 = new badguy5()
-      badguy6 = new badguy6()
-      badguy7 = new badguy7()
-      side1 = new side1()
-      side2 = new side2()
-      side3 = new side3()
-      side4 = new side4()
-      side5 = new side5()
-      goal = new goal()
-    } 
-    function draw() { 
-      clear() 
-      console.log(player.x)
-      player.show() 
-      player.update() 
-      badguy.show() 
-      badguy.update() 
-      badguy2.show() 
-      badguy2.update() 
-      badguy4.show()
-      badguy4.update()
-      badguy5.show()
-      badguy5.update()
-      badguy6.show()
-      badguy6.update()
-      badguy7.show()
-      badguy7.update()
-      side1.show()
-      side1.update()
-      side2.show()
-      side2.update()
-      side3.show()
-      side3.update()
-      side4.show()
-      side4.update()
-      side5.show()
-      side5.update()
-      goal.show()
-      hit = collideCircleCircle(player.x, player.y, 50, badguy.x, badguy.y, 50) 
-      hit2 = collideCircleCircle(player.x, player.y, 50, badguy2.x, badguy2.y, 50)
-      hit3 = collideCircleCircle(player.x, player.y, 50, badguy4.x, badguy4.y, 50)
-      hit4 = collideCircleCircle(player.x, player.y, 50, badguy5.x, badguy5.y, 50)
-      hit5 = collideCircleCircle(player.x, player.y, 50, badguy5.x, badguy6.y, 50)
-      hit6 = collideCircleCircle(player.x, player.y, 50, badguy7.x, badguy7.y, 50)
-      hit7 = collideCircleCircle(player.x, player.y, 50, side1.x, side1.y, 50)
-      hit8 = collideCircleCircle(player.x, player.y, 50, side2.x, side2.y, 50)
-      hit9 = collideCircleCircle(player.x, player.y, 50, side3.x, side3.y, 50)
-      hit10 = collideCircleCircle(player.x, player.y, 50, side4.x, side4.y, 50)
-      hit11 = collideCircleCircle(player.x, player.y, 50, side5.x, side5.y, 50)
-      hit12 = collideLineCircle(w-50, 10, w-50, h-10, player.x, player.y, 50)
-      if ((hit == true)||(hit2 == true)||(hit3 == true)||(hit4 == true)||(hit5 == true)||(hit6 == true)||(hit7 == true)||(hit8 == true)||(hit9 == true)||(hit10 == true)||(hit11 == true)) { 
-        player.x = 25 
-        player.y = 25 
+      function setup() { 
+        createCanvas(w,h) 
+        player = new player() 
+        badguy = new badguy() 
+        badguy2 = new badguy2() 
+        badguy4 = new badguy4()
+        badguy5 = new badguy5()
+        badguy6 = new badguy6()
+        badguy7 = new badguy7()
+        side1 = new side1()
+        side2 = new side2()
+        side3 = new side3()
+        side4 = new side4()
+        side5 = new side5()
+        goal = new goal()
       } 
-      if (hit12 == true) {
-        window.alert('game ends')
-        getElementsByTagName('body').style.visibility = 'hidden'
-      }
-    }
-    function player() { 
-      this.x = 25 
-      this.y = 25 
-      this.show = function() { 
-        fill(color('red')) 
-        ellipse(this.x, this.y, 50, 50) 
-      } 
-      this.update = function() { 
-        if(keyIsDown(65)) { 
-          this.x = this.x -= 5 
+      function draw() { 
+        clear() 
+        console.log(player.x)
+        player.show() 
+        player.update() 
+        badguy.show() 
+        badguy.update() 
+        badguy2.show() 
+        badguy2.update() 
+        badguy4.show()
+        badguy4.update()
+        badguy5.show()
+        badguy5.update()
+        badguy6.show()
+        badguy6.update()
+        badguy7.show()
+        badguy7.update()
+        side1.show()
+        side1.update()
+        side2.show()
+        side2.update()
+        side3.show()
+        side3.update()
+        side4.show()
+        side4.update()
+        side5.show()
+        side5.update()
+        goal.show()
+        hit = collideCircleCircle(player.x, player.y, 50, badguy.x, badguy.y, 50) 
+        hit2 = collideCircleCircle(player.x, player.y, 50, badguy2.x, badguy2.y, 50)
+        hit3 = collideCircleCircle(player.x, player.y, 50, badguy4.x, badguy4.y, 50)
+        hit4 = collideCircleCircle(player.x, player.y, 50, badguy5.x, badguy5.y, 50)
+        hit5 = collideCircleCircle(player.x, player.y, 50, badguy5.x, badguy6.y, 50)
+        hit6 = collideCircleCircle(player.x, player.y, 50, badguy7.x, badguy7.y, 50)
+        hit7 = collideCircleCircle(player.x, player.y, 50, side1.x, side1.y, 50)
+        hit8 = collideCircleCircle(player.x, player.y, 50, side2.x, side2.y, 50)
+        hit9 = collideCircleCircle(player.x, player.y, 50, side3.x, side3.y, 50)
+        hit10 = collideCircleCircle(player.x, player.y, 50, side4.x, side4.y, 50)
+        hit11 = collideCircleCircle(player.x, player.y, 50, side5.x, side5.y, 50)
+        hit12 = collideLineCircle(w-50, 10, w-50, h-10, player.x, player.y, 50)
+        if ((hit == true)||(hit2 == true)||(hit3 == true)||(hit4 == true)||(hit5 == true)||(hit6 == true)||(hit7 == true)||(hit8 == true)||(hit9 == true)||(hit10 == true)||(hit11 == true)) { 
+          player.x = 25 
+          player.y = 25 
         } 
-        if(keyIsDown(87)) { 
-          this.y = this.y -= 5 
-        } 
-        if(keyIsDown(68)) { 
-          this.x = this.x += 5 
-        } 
-        if(keyIsDown(83)) { 
-          this.y = this.y += 5
-        } 
-        if((this.x > w-25)||(this.x < 25)||(this.y > h-25)||(this.y < 25)) {
-          this.x = 25
-          this.y = 25 
-        }
-      } 
-    } 
-    function badguy() { 
-      this.x = w/7
-      this.y = h/2 
-      this.lift = -5 
-      this.velocity = 0 
-      this.show = function() { 
-        fill(color('blue')) 
-        ellipse(this.x, this.y, 50, 50) } 
-      this.update = function() { 
-        this.y += this.velocity 
-        this.velocity *= 0.3 
-        if (this.y > h-25) { 
-          this.y = h-25 
-          this.velocity = 0 
-        } 
-        this.velocity += this.lift 
-        if (this.y < -50 ) { 
-          this.velocity = h+50 
-        } 
-      } 
-    }
-    function badguy2() { 
-      this.x = w*4/7
-      this.y = h*2/7 
-      this.lift = -5 
-      this.velocity = 0 
-      this.show = function() { 
-        fill(color('blue')) 
-        ellipse(this.x, this.y, 50, 50)
-      } 
-      this.update = function() { 
-        this.y += this.velocity 
-        this.velocity *= 0.3
-        if (this.y > h-25) { 
-          this.y = h-25 
-          this.velocity = 0 
-        } 
-        this.velocity += this.lift 
-        if (this.y < -50 ) {
-          this.velocity = h+50 
-        } 
-      } 
-    } 
-    function badguy4() { 
-      this.x = w*2/7
-      this.y = h/7 
-      this.lift = -5 
-      this.velocity = 0 
-      this.show = function() { 
-        fill(color('blue')) 
-        ellipse(this.x, this.y, 50, 50)
-      } 
-      this.update = function() { 
-        this.y += this.velocity 
-        this.velocity *= 0.3
-        if (this.y > h-25) { 
-          this.y = h-25 
-          this.velocity = 0 
-        } 
-        this.velocity += this.lift 
-        if (this.y < -50 ) {
-          this.velocity = h+50 
-        } 
-      } 
-    } 
-    function badguy5() { 
-      this.x = w*6/7
-      this.y = h*4/7
-      this.lift = -5 
-      this.velocity = 0 
-      this.show = function() { 
-        fill(color('blue')) 
-        ellipse(this.x, this.y, 50, 50)
-      } 
-      this.update = function() { 
-        this.y += this.velocity 
-        this.velocity *= 0.3
-        if (this.y > h-25) { 
-          this.y = h-25 
-          this.velocity = 0 
-        } 
-        this.velocity += this.lift 
-        if (this.y < -50 ) {
-          this.velocity = h+50 
-        } 
-      } 
-    } 
-    function badguy6() { 
-      this.x = w*3/7
-      this.y = h*5/7 
-      this.lift = -5 
-      this.velocity = 0 
-      this.show = function() { 
-        fill(color('blue')) 
-        ellipse(this.x, this.y, 50, 50)
-      } 
-      this.update = function() { 
-        this.y += this.velocity 
-        this.velocity *= 0.3
-        if (this.y > h-25) { 
-          this.y = h-25 
-          this.velocity = 0 
-        } 
-        this.velocity += this.lift 
-        if (this.y < -50 ) {
-          this.velocity = h+50 
-        } 
-      } 
-    } 
-    function badguy7() { 
-      this.x = w*5/7
-      this.y = h*6/7 
-      this.lift = -5 
-      this.velocity = 0 
-      this.show = function() { 
-        fill(color('blue')) 
-        ellipse(this.x, this.y, 50, 50)
-      } 
-      this.update = function() { 
-        this.y += this.velocity 
-        this.velocity *= 0.3
-        if (this.y > h-25) { 
-          this.y = h-25 
-          this.velocity = 0 
-        } 
-        this.velocity += this.lift 
-        if (this.y < -50 ) {
-          this.velocity = h+50 
-        } 
-      } 
-    } 
-    function side1() {
-      this.x = w/5
-      this.y = h/5
-      this.lift = -5
-      this.velocity = 0
-      this.show = function() {
-        fill(color('blue'))
-        ellipse(this.x, this.y, 50, 50)
-      }
-      this.update = function() {
-        this.x += this.velocity
-        this.velocity *= 0.4
-        if (this.x > w-25) {
-          this.x = w-25
-          this.velocity = 0
-        }
-        this.velocity += this.lift
-        if (this.x < -50 ) {
-          this.velocity = w + 50
+        if (hit12 == true) {
+          window.alert('game ends')
+          getElementsByTagName('body').style.visibility = 'hidden'
         }
       }
-    }
-    function side2() {
-      this.x = w*2/5
-      this.y = h*2/5
-      this.lift = -5
-      this.velocity = 0
-      this.show = function() {
-        fill(color('blue'))
-        ellipse(this.x, this.y, 50, 50)
+      function player() { 
+        this.x = 25 
+        this.y = 25 
+        this.show = function() { 
+          fill(color('red')) 
+          ellipse(this.x, this.y, 50, 50) 
+        } 
+        this.update = function() { 
+          if(keyIsDown(65)) { 
+            this.x = this.x -= 5 
+          } 
+          if(keyIsDown(87)) { 
+            this.y = this.y -= 5 
+          } 
+          if(keyIsDown(68)) { 
+            this.x = this.x += 5 
+          } 
+          if(keyIsDown(83)) { 
+            this.y = this.y += 5
+          } 
+          if((this.x > w-25)||(this.x < 25)||(this.y > h-25)||(this.y < 25)) {
+            this.x = 25
+            this.y = 25 
+          }
+        } 
+      } 
+      function badguy() { 
+        this.x = w/7
+        this.y = h/2 
+        this.lift = -5 
+        this.velocity = 0 
+        this.show = function() { 
+          fill(color('blue')) 
+          ellipse(this.x, this.y, 50, 50) } 
+        this.update = function() { 
+          this.y += this.velocity 
+          this.velocity *= 0.3 
+          if (this.y > h-25) { 
+            this.y = h-25 
+            this.velocity = 0 
+          } 
+          this.velocity += this.lift 
+          if (this.y < -50 ) { 
+            this.velocity = h+50 
+          } 
+        } 
       }
-      this.update = function() {
-        this.x += this.velocity
-        this.velocity *= 0.4
-        if (this.x > w-25) {
-          this.x = w-25
-          this.velocity = 0
+      function badguy2() { 
+        this.x = w*4/7
+        this.y = h*2/7 
+        this.lift = -5 
+        this.velocity = 0 
+        this.show = function() { 
+          fill(color('blue')) 
+          ellipse(this.x, this.y, 50, 50)
+        } 
+        this.update = function() { 
+          this.y += this.velocity 
+          this.velocity *= 0.3
+          if (this.y > h-25) { 
+            this.y = h-25 
+            this.velocity = 0 
+          } 
+          this.velocity += this.lift 
+          if (this.y < -50 ) {
+            this.velocity = h+50 
+          } 
+        } 
+      } 
+      function badguy4() { 
+        this.x = w*2/7
+        this.y = h/7 
+        this.lift = -5 
+        this.velocity = 0 
+        this.show = function() { 
+          fill(color('blue')) 
+          ellipse(this.x, this.y, 50, 50)
+        } 
+        this.update = function() { 
+          this.y += this.velocity 
+          this.velocity *= 0.3
+          if (this.y > h-25) { 
+            this.y = h-25 
+            this.velocity = 0 
+          } 
+          this.velocity += this.lift 
+          if (this.y < -50 ) {
+            this.velocity = h+50 
+          } 
+        } 
+      } 
+      function badguy5() { 
+        this.x = w*6/7
+        this.y = h*4/7
+        this.lift = -5 
+        this.velocity = 0 
+        this.show = function() { 
+          fill(color('blue')) 
+          ellipse(this.x, this.y, 50, 50)
+        } 
+        this.update = function() { 
+          this.y += this.velocity 
+          this.velocity *= 0.3
+          if (this.y > h-25) { 
+            this.y = h-25 
+            this.velocity = 0 
+          } 
+          this.velocity += this.lift 
+          if (this.y < -50 ) {
+            this.velocity = h+50 
+          } 
+        } 
+      } 
+      function badguy6() { 
+        this.x = w*3/7
+        this.y = h*5/7 
+        this.lift = -5 
+        this.velocity = 0 
+        this.show = function() { 
+          fill(color('blue')) 
+          ellipse(this.x, this.y, 50, 50)
+        } 
+        this.update = function() { 
+          this.y += this.velocity 
+          this.velocity *= 0.3
+          if (this.y > h-25) { 
+            this.y = h-25 
+            this.velocity = 0 
+          } 
+          this.velocity += this.lift 
+          if (this.y < -50 ) {
+            this.velocity = h+50 
+          } 
+        } 
+      } 
+      function badguy7() { 
+        this.x = w*5/7
+        this.y = h*6/7 
+        this.lift = -5 
+        this.velocity = 0 
+        this.show = function() { 
+          fill(color('blue')) 
+          ellipse(this.x, this.y, 50, 50)
+        } 
+        this.update = function() { 
+          this.y += this.velocity 
+          this.velocity *= 0.3
+          if (this.y > h-25) { 
+            this.y = h-25 
+            this.velocity = 0 
+          } 
+          this.velocity += this.lift 
+          if (this.y < -50 ) {
+            this.velocity = h+50 
+          } 
+        } 
+      } 
+      function side1() {
+        this.x = w/5
+        this.y = h/5
+        this.lift = -5
+        this.velocity = 0
+        this.show = function() {
+          fill(color('blue'))
+          ellipse(this.x, this.y, 50, 50)
         }
-        this.velocity += this.lift
-        if (this.x < -50 ) {
-          this.velocity = w + 50
+        this.update = function() {
+          this.x += this.velocity
+          this.velocity *= 0.4
+          if (this.x > w-25) {
+            this.x = w-25
+            this.velocity = 0
+          }
+          this.velocity += this.lift
+          if (this.x < -50 ) {
+            this.velocity = w + 50
+          }
         }
       }
-    }
-    function side3() {
-      this.x = w*3/5
-      this.y = h*3/5
-      this.lift = -5
-      this.velocity = 0
-      this.show = function() {
-        fill(color('blue'))
-        ellipse(this.x, this.y, 50, 50)
-      }
-      this.update = function() {
-        this.x += this.velocity
-        this.velocity *= 0.4
-        if (this.x > w-25) {
-          this.x = w-25
-          this.velocity = 0
+      function side2() {
+        this.x = w*2/5
+        this.y = h*2/5
+        this.lift = -5
+        this.velocity = 0
+        this.show = function() {
+          fill(color('blue'))
+          ellipse(this.x, this.y, 50, 50)
         }
-        this.velocity += this.lift
-        if (this.x < -50 ) {
-          this.velocity = w + 50
-        }
-      }
-    }
-    function side4() {
-      this.x = w*0.8
-      this.y = h*0.8
-      this.lift = -5
-      this.velocity = 0
-      this.show = function() {
-        fill(color('blue'))
-        ellipse(this.x, this.y, 50, 50)
-      }
-      this.update = function() {
-        this.x += this.velocity
-        this.velocity *= 0.4
-        if (this.x > w-25) {
-          this.x = w-25
-          this.velocity = 0
-        }
-        this.velocity += this.lift
-        if (this.x < -50 ) {
-          this.velocity = w + 50
+        this.update = function() {
+          this.x += this.velocity
+          this.velocity *= 0.4
+          if (this.x > w-25) {
+            this.x = w-25
+            this.velocity = 0
+          }
+          this.velocity += this.lift
+          if (this.x < -50 ) {
+            this.velocity = w + 50
+          }
         }
       }
-    }
-    function side5() {
-      this.x = w - 50
-      this.y = h/2
-      this.lift = -5
-      this.velocity = 0
-      this.show = function() {
-        fill(color('blue'))
-        ellipse(this.x, this.y, 50, 50)
-      }
-      this.update = function() {
-        this.x += this.velocity
-        this.velocity *= 0.4
-        if (this.x > w-25) {
-          this.x = w-25
-          this.velocity = 0
+      function side3() {
+        this.x = w*3/5
+        this.y = h*3/5
+        this.lift = -5
+        this.velocity = 0
+        this.show = function() {
+          fill(color('blue'))
+          ellipse(this.x, this.y, 50, 50)
         }
-        this.velocity += this.lift
-        if (this.x < -50 ) {
-          this.velocity = w + 50
+        this.update = function() {
+          this.x += this.velocity
+          this.velocity *= 0.4
+          if (this.x > w-25) {
+            this.x = w-25
+            this.velocity = 0
+          }
+          this.velocity += this.lift
+          if (this.x < -50 ) {
+            this.velocity = w + 50
+          }
         }
       }
-    }
+      function side4() {
+        this.x = w*0.8
+        this.y = h*0.8
+        this.lift = -5
+        this.velocity = 0
+        this.show = function() {
+          fill(color('blue'))
+          ellipse(this.x, this.y, 50, 50)
+        }
+        this.update = function() {
+          this.x += this.velocity
+          this.velocity *= 0.4
+          if (this.x > w-25) {
+            this.x = w-25
+            this.velocity = 0
+          }
+          this.velocity += this.lift
+          if (this.x < -50 ) {
+            this.velocity = w + 50
+          }
+        }
+      }
+      function side5() {
+        this.x = w - 50
+        this.y = h/2
+        this.lift = -5
+        this.velocity = 0
+        this.show = function() {
+          fill(color('blue'))
+          ellipse(this.x, this.y, 50, 50)
+        }
+        this.update = function() {
+          this.x += this.velocity
+          this.velocity *= 0.4
+          if (this.x > w-25) {
+            this.x = w-25
+            this.velocity = 0
+          }
+          this.velocity += this.lift
+          if (this.x < -50 ) {
+            this.velocity = w + 50
+          }
+        }
+      }
 
-    function goal() {
-      this.show = function() {
-        line(w-50, 0, w-50, h-15)
-        fill(color('red'))
-        rect(w-50, 0, 50, h-15)
+      function goal() {
+        this.show = function() {
+          line(w-50, 0, w-50, h-15)
+          fill(color('red'))
+          rect(w-50, 0, 50, h-15)
+        }
       }
-    }
+    </script>
   </body>
 </html>
